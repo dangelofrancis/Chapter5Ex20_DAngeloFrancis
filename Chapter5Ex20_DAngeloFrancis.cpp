@@ -10,7 +10,11 @@ If the user’s guess is higher than the random number, the program should display
 
 If the user’s guess is lower than the random number, the program should display “Too low, try again.”
 
-The program should use a loop that repeats until the user correctly guesses the random number.*/
+The program should use a loop that repeats until the user correctly guesses the random number.
+
+Create a second branch and Enhance the program so it keeps a count of the number of guesses the user makes. When the user correctly guesses the random number,
+
+the program should display the number of guesses.*/
 
 #include <iostream>
 #include <random>
@@ -47,9 +51,11 @@ int main()
 	{
 		int number = GetRandomNumber();
 		int guess;
+		int guessCount = 0;
 
 		do
 		{
+			cout << "\n\nGuess #" << ++guessCount;
 			guess = GuessNumber();
 			HighOrLow(number, guess);
 		} while (number != guess);
